@@ -1,0 +1,26 @@
+{
+  "name": "tree-sitter-fluentbit",
+  "version": "0.1.0",
+  "description": "fluent-bit grammar for tree-sitter",
+  "main": "bindings/node",
+  "scripts": {
+    "build": "tree-sitter generate && node-gyp build",
+    "test": "tree-sitter test"
+  },
+  "keywords": [
+    "parser",
+    "fluent-bit"
+  ],
+  "author": {
+    "name": "Seonghyeon Cho",
+    "email": "seonghyeoncho96@gmail.com",
+    "url": "https://github.com/sh-cho"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "nan": "^2.18.0"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.20.8"
+  }
+}
