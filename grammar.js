@@ -5,14 +5,14 @@ module.exports = grammar({
 
   // https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode/format-schema
   rules: {
-    config_file: $ => repeat(
+    config: $ => repeat(
       choice(
-        $.config_block,
+        $._config_block,
         seq(optional($._comment), $._LF),
       ),
     ),
 
-    config_block: $ => choice(
+    _config_block: $ => choice(
       $.section,
       $.meta,
     ),
@@ -21,12 +21,12 @@ module.exports = grammar({
      * Section
      **************************************************************************/
     section: $ => seq(
-      $.section_header,
-      $.section_body,
+      field('header', $.section_header),
+      field('body', $.section_body),
     ),
 
     section_header: $ => seq(
-      '[', field('name', $.identifier), ']',
+      '[', field('name', $.section_header_type), ']',
       $._LF,
     ),
     section_body: $ => repeat1(
@@ -55,22 +55,26 @@ module.exports = grammar({
       $._LF
     ),
 
-    meta_set: $ => seq('SET', $._WS, $.assign_expr),
-    meta_include: $ => seq('INCLUDE', $._WS, alias($.value, 'path')),
+    meta_set: $ => seq('SET', $._WS, $._assign_expr),
+    meta_include: $ => seq('INCLUDE', $._WS, field('pattern', $.value_type)),
 
-    assign_expr: $ => seq(
+    /***************************************************************************
+     * Commons
+     **************************************************************************/
+    _assign_expr: $ => seq(
       field('key', $.identifier),
       '=',
-      field('value', $.value),
+      field('value', $.value_type),
     ),
     entry: $ => seq(
       field('key', $.identifier),
       $._WS,
-      field('value', $.value),
+      field('value', $.value_type),
     ),
 
     identifier: $ => /[a-zA-Z0-9_]+/,
-    value: $ => /[^\n]+/,   // TODO: multiple value
+    section_header_type: $ => /[a-zA-Z0-9_\.]+/,
+    value_type: $ => /[^\n]+/,   // TODO: multiple value
 
     _LF: $ => '\n',
     _INDENT: $ => '    ',   // 4 spaces

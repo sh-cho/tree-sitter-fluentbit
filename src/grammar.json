@@ -1,14 +1,14 @@
 {
   "name": "fluentbit",
   "rules": {
-    "config_file": {
+    "config": {
       "type": "REPEAT",
       "content": {
         "type": "CHOICE",
         "members": [
           {
             "type": "SYMBOL",
-            "name": "config_block"
+            "name": "_config_block"
           },
           {
             "type": "SEQ",
@@ -34,7 +34,7 @@
         ]
       }
     },
-    "config_block": {
+    "_config_block": {
       "type": "CHOICE",
       "members": [
         {
@@ -51,12 +51,20 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "SYMBOL",
-          "name": "section_header"
+          "type": "FIELD",
+          "name": "header",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_header"
+          }
         },
         {
-          "type": "SYMBOL",
-          "name": "section_body"
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "section_body"
+          }
         }
       ]
     },
@@ -72,7 +80,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "section_header_type"
           }
         },
         {
@@ -153,7 +161,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "assign_expr"
+          "name": "_assign_expr"
         }
       ]
     },
@@ -169,17 +177,16 @@
           "name": "_WS"
         },
         {
-          "type": "ALIAS",
+          "type": "FIELD",
+          "name": "pattern",
           "content": {
             "type": "SYMBOL",
-            "name": "value"
-          },
-          "named": false,
-          "value": "path"
+            "name": "value_type"
+          }
         }
       ]
     },
-    "assign_expr": {
+    "_assign_expr": {
       "type": "SEQ",
       "members": [
         {
@@ -199,7 +206,7 @@
           "name": "value",
           "content": {
             "type": "SYMBOL",
-            "name": "value"
+            "name": "value_type"
           }
         }
       ]
@@ -224,7 +231,7 @@
           "name": "value",
           "content": {
             "type": "SYMBOL",
-            "name": "value"
+            "name": "value_type"
           }
         }
       ]
@@ -233,7 +240,11 @@
       "type": "PATTERN",
       "value": "[a-zA-Z0-9_]+"
     },
-    "value": {
+    "section_header_type": {
+      "type": "PATTERN",
+      "value": "[a-zA-Z0-9_\\.]+"
+    },
+    "value_type": {
       "type": "PATTERN",
       "value": "[^\\n]+"
     },
