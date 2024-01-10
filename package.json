@@ -16,6 +16,11 @@
     "email": "seonghyeoncho96@gmail.com",
     "url": "https://github.com/sh-cho"
   },
+  "repository": "github:sh-cho/tree-sitter-fluentbit",
+  "bugs": {
+    "url": "https://github.com/sh-cho/tree-sitter-fluentbit/issues"
+  },
+  "homepage": "https://github.com/sh-cho/tree-sitter-fluentbit",
   "license": "MIT",
   "dependencies": {
     "nan": "^2.18.0"
