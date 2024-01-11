@@ -5,5 +5,5 @@
 ## Run docs locally
 ```sh
 $ cd docs/
-$ npx live-server --mount=/:assets/
+$ npx live-server
 ```

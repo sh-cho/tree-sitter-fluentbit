@@ -8,8 +8,16 @@
 > [!CAUTION]
 > Work in progress. It's not ready for use.
 
+## Install
+```sh
+npm install tree-sitter-fluentbit tree-sitter
+```
+
 ## Supported format
 - [Classic Mode](https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode)
 
 ## Limitations
 - Only 4 spaces are allowed for indentation (for easier implementation)
+
+## License
+MIT © [Seonghyeon Cho](https://github.com/sh-cho)
