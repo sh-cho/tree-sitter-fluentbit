@@ -28,5 +28,11 @@
   "devDependencies": {
     "node-gyp": "^10.0.1",
     "tree-sitter-cli": "^0.20.8"
-  }
+  },
+  "files": [
+    "/src/",
+    "/bindings/node/",
+    "/binding.gyp",
+    "/grammar.js"
+  ]
 }
