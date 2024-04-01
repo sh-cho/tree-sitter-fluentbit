@@ -1,7 +1,9 @@
 # tree-sitter-fluentbit
 
 [![CI](https://github.com/sh-cho/tree-sitter-fluentbit/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/sh-cho/tree-sitter-fluentbit/actions/workflows/ci.yaml)
-[![NPM Version](https://img.shields.io/npm/v/tree-sitter-fluentbit)](https://www.npmjs.com/package/tree-sitter-fluentbit)
+[![Crates.io Version](https://img.shields.io/crates/v/tree-sitter-fluentbit?logo=rust)](https://crates.io/crates/tree-sitter-fluentbit)
+[![NPM Version](https://img.shields.io/npm/v/tree-sitter-fluentbit?logo=npm&logoColor=white)
+](https://www.npmjs.com/package/tree-sitter-fluentbit)
 
 [fluent-bit](https://github.com/fluent/fluent-bit/) grammar for tree-sitter
 
