@@ -14,7 +14,7 @@ module.exports = grammar({
 
     _config_block: $ => choice(
       $.section,
-      $.meta,
+      $.directive,
     ),
 
     /***************************************************************************
@@ -44,19 +44,19 @@ module.exports = grammar({
     // TODO: group
 
     /***************************************************************************
-     * Meta
+     * Directives
      **************************************************************************/
-    meta: $ => seq(
+    directive: $ => seq(
       '@',
       choice(
-        $.meta_set,
-        $.meta_include,
+        $.directive_set,
+        $.directive_include,
       ),
       $._LF
     ),
 
-    meta_set: $ => seq('SET', $._WS, $._assign_expr),
-    meta_include: $ => seq('INCLUDE', $._WS, field('pattern', $.value_type)),
+    directive_set: $ => seq('SET', $._WS, $._assign_expr),
+    directive_include: $ => seq('INCLUDE', $._WS, field('pattern', $.value_type)),
 
     /***************************************************************************
      * Commons
