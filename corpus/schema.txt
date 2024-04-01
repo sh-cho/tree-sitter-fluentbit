@@ -1,15 +1,15 @@
 ================================================================================
-meta
+directives
 ================================================================================
 @INCLUDE abc.conf
 @SET my_env=1
 
 --------------------------------------------------------------------------------
 (config
-  (meta
-    (meta_include
+  (directive
+    (directive_include
       (value_type)))
-  (meta
-    (meta_set
+  (directive
+    (directive_set
       (identifier)
       (value_type))))
