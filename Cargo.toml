@@ -1,11 +1,12 @@
 [package]
 name = "tree-sitter-fluentbit"
-description = "fluentbit grammar for the tree-sitter parsing library"
-version = "0.0.1"
+description = "fluent-bit grammar for tree-sitter"
+version = "0.1.0-alpha.1"
 keywords = ["incremental", "parsing", "fluentbit"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/tree-sitter/tree-sitter-fluentbit"
-edition = "2018"
+authors = ["Seonghyeon Cho <seonghyeoncho96@gmail.com>"]
+edition = "2021"
 license = "MIT"
 
 build = "bindings/rust/build.rs"
