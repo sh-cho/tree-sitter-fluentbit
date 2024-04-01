@@ -1,9 +1,14 @@
+/**
+ * Schema Reference
+ * - https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode/format-schema
+ * - https://github.com/chronosphereio/calyptia-fluent-bit-config-parser/blob/01349de7128eaf20ff4aa518502b853984c4c72f/src/parser.ts#L233
+ */
+
 module.exports = grammar({
   name: 'fluentbit',
 
   extras: $ => [],
 
-  // https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode/format-schema
   rules: {
     config: $ => repeat(
       choice(
