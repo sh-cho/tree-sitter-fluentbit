@@ -46,4 +46,4 @@ Check before publish with `--dry-run`
 $ cargo login
 $ cargo publish
 ```
-Check before publish with (`--dry-run`)
+Check before publish with `--dry-run`
