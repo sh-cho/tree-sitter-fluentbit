@@ -68,7 +68,9 @@ module.exports = grammar({
      **************************************************************************/
     _assign_expr: $ => seq(
       field('key', $.identifier),
+      optional($._WS),
       '=',
+      optional($._WS),
       field('value', $.value_type),
     ),
     entry: $ => seq(

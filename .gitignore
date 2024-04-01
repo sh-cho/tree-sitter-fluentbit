@@ -3,3 +3,6 @@
 .DS_Store
 /tmp
 /target
+
+# mise conf
+.mise.toml
