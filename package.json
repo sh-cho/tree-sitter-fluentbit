@@ -16,7 +16,10 @@
     "email": "seonghyeoncho96@gmail.com",
     "url": "https://github.com/sh-cho"
   },
-  "repository": "github:sh-cho/tree-sitter-fluentbit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh-cho/tree-sitter-fluentbit.git"
+  },
   "bugs": {
     "url": "https://github.com/sh-cho/tree-sitter-fluentbit/issues"
   },
