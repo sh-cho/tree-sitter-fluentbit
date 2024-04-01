@@ -1,9 +1,14 @@
+/**
+ * Schema Reference
+ * - https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode/format-schema
+ * - https://github.com/chronosphereio/calyptia-fluent-bit-config-parser/blob/01349de7128eaf20ff4aa518502b853984c4c72f/src/parser.ts#L233
+ */
+
 module.exports = grammar({
   name: 'fluentbit',
 
   extras: $ => [],
 
-  // https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode/format-schema
   rules: {
     config: $ => repeat(
       choice(
@@ -14,7 +19,7 @@ module.exports = grammar({
 
     _config_block: $ => choice(
       $.section,
-      $.meta,
+      $.directive,
     ),
 
     /***************************************************************************
@@ -44,26 +49,28 @@ module.exports = grammar({
     // TODO: group
 
     /***************************************************************************
-     * Meta
+     * Directives
      **************************************************************************/
-    meta: $ => seq(
+    directive: $ => seq(
       '@',
       choice(
-        $.meta_set,
-        $.meta_include,
+        $.directive_set,
+        $.directive_include,
       ),
       $._LF
     ),
 
-    meta_set: $ => seq('SET', $._WS, $._assign_expr),
-    meta_include: $ => seq('INCLUDE', $._WS, field('pattern', $.value_type)),
+    directive_set: $ => seq('SET', $._WS, $._assign_expr),
+    directive_include: $ => seq('INCLUDE', $._WS, field('pattern', $.value_type)),
 
     /***************************************************************************
      * Commons
      **************************************************************************/
     _assign_expr: $ => seq(
       field('key', $.identifier),
+      optional($._WS),
       '=',
+      optional($._WS),
       field('value', $.value_type),
     ),
     entry: $ => seq(

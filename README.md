@@ -17,7 +17,14 @@ npm install tree-sitter-fluentbit tree-sitter
 - [Classic Mode](https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode)
 
 ## Limitations
-- Only 4 spaces are allowed for indentation (for easier implementation)
+> [!NOTE]
+> For simple implementation, the following limitations are applied (for now)
+
+- Only 4 space indentation is supported
+- Empty line at the end of the file is required
+
+## Contributing
+See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## License
 MIT © [Seonghyeon Cho](https://github.com/sh-cho)

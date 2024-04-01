@@ -8,7 +8,7 @@
       "required": false,
       "types": [
         {
-          "type": "meta",
+          "type": "directive",
           "named": true
         },
         {
@@ -19,7 +19,42 @@
     }
   },
   {
-    "type": "entry",
+    "type": "directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_include",
+          "named": true
+        },
+        {
+          "type": "directive_set",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "directive_include",
+    "named": true,
+    "fields": {
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "value_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "directive_set",
     "named": true,
     "fields": {
       "key": {
@@ -45,42 +80,7 @@
     }
   },
   {
-    "type": "meta",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "meta_include",
-          "named": true
-        },
-        {
-          "type": "meta_set",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "meta_include",
-    "named": true,
-    "fields": {
-      "pattern": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "value_type",
-            "named": true
-          }
-        ]
-      }
-    }
-  },
-  {
-    "type": "meta_set",
+    "type": "entry",
     "named": true,
     "fields": {
       "key": {
