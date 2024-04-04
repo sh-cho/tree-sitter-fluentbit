@@ -13,7 +13,7 @@ module.exports = grammar({
     config: $ => repeat(
       choice(
         $._config_block,
-        seq(optional($._comment), $._LF),
+        seq(optional($.comment), $._LF),
       ),
     ),
 
@@ -39,7 +39,7 @@ module.exports = grammar({
         $._INDENT,
         choice(
           $.entry,
-          $._comment,
+          $.comment,
           // $.group,
         ),
         $._LF,
@@ -87,6 +87,6 @@ module.exports = grammar({
     _INDENT: $ => '    ',   // 4 spaces
     _WS: $ => / +/,         // only space
 
-    _comment: $ => /#[^\n]+/,
+    comment: $ => /#[^\n]+/,
   },
 });

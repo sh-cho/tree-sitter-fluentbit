@@ -8,6 +8,10 @@
       "required": false,
       "types": [
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "directive",
           "named": true
         },
@@ -137,8 +141,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
         {
           "type": "entry",
           "named": true
@@ -185,6 +193,10 @@
   {
     "type": "]",
     "named": false
+  },
+  {
+    "type": "comment",
+    "named": true
   },
   {
     "type": "identifier",
