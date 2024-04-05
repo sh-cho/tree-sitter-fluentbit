@@ -87,6 +87,6 @@ module.exports = grammar({
     _INDENT: $ => '    ',   // 4 spaces
     _WS: $ => / +/,         // only space
 
-    comment: $ => /#[^\n]+/,
+    comment: $ => token(seq('#', /.*/)),
   },
 });
