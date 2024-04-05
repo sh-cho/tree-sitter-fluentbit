@@ -42,3 +42,24 @@ directives_set without space
     (directive_set
       (identifier)
       (value_type))))
+
+
+================================================================================
+section
+================================================================================
+[INPUT]
+    KEY1  VALUE1
+    KEY2  VALUE2
+
+--------------------------------------------------------------------------------
+(config
+  (section
+    (section_header
+      (section_header_type))
+    (section_body
+      (entry
+        (identifier)
+        (value_type))
+      (entry
+        (identifier)
+        (value_type)))))
