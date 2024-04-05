@@ -63,3 +63,25 @@ section
       (entry
         (identifier)
         (value_type)))))
+
+
+================================================================================
+comments
+================================================================================
+# comment
+
+[INPUT]
+    # comment
+    KEY1  VALUE1
+
+--------------------------------------------------------------------------------
+(config
+  (comment)
+  (section
+    (section_header
+      (section_header_type))
+    (section_body
+      (comment)
+      (entry
+        (identifier)
+        (value_type)))))
