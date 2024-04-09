@@ -30,6 +30,9 @@ $ npm exec tree-sitter build-wasm
 ```
 
 ## Publish
+
+After update release version, change version in `package.json` and `Cargo.toml`. Also update lockfile with `npm i --package-lock-only` and `cargo clean`.
+
 ### npm
 - https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages
 
