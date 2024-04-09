@@ -7,14 +7,6 @@
 
 [fluent-bit](https://github.com/fluent/fluent-bit/) grammar for tree-sitter
 
-> [!CAUTION]
-> Work in progress. It's not ready for use.
-
-## Install
-```sh
-npm install tree-sitter-fluentbit tree-sitter
-```
-
 ## Supported format
 - [Classic Mode](https://docs.fluentbit.io/manual/administration/configuring-fluent-bit/classic-mode)
 
