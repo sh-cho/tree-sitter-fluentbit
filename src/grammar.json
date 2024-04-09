@@ -194,7 +194,7 @@
           "name": "key",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "key_type"
           }
         },
         {
@@ -243,7 +243,7 @@
           "name": "key",
           "content": {
             "type": "SYMBOL",
-            "name": "identifier"
+            "name": "key_type"
           }
         },
         {
@@ -260,11 +260,11 @@
         }
       ]
     },
-    "identifier": {
+    "section_header_type": {
       "type": "PATTERN",
       "value": "[a-zA-Z0-9_]+"
     },
-    "section_header_type": {
+    "key_type": {
       "type": "PATTERN",
       "value": "[a-zA-Z0-9_\\.]+"
     },

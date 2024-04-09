@@ -37,5 +37,13 @@
     "/bindings/node/",
     "/binding.gyp",
     "/grammar.js"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "source.conf",
+      "file-types": [
+        "conf"
+      ]
+    }
   ]
 }

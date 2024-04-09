@@ -67,20 +67,21 @@ module.exports = grammar({
      * Commons
      **************************************************************************/
     _assign_expr: $ => seq(
-      field('key', $.identifier),
+      field('key', $.key_type),
       optional($._WS),
       '=',
       optional($._WS),
       field('value', $.value_type),
     ),
     entry: $ => seq(
-      field('key', $.identifier),
+      field('key', $.key_type),
       $._WS,
       field('value', $.value_type),
     ),
 
-    identifier: $ => /[a-zA-Z0-9_]+/,
-    section_header_type: $ => /[a-zA-Z0-9_\.]+/,
+    section_header_type: $ => /[a-zA-Z0-9_]+/,
+
+    key_type: $ => /[a-zA-Z0-9_\.]+/,
     value_type: $ => /[^\n]+/,   // TODO: multiple value
 
     _LF: $ => '\n',
