@@ -3,9 +3,14 @@
 (TBD)
 
 ## Dev
-### Setup node using [mise](https://github.com/jdx/mise)
+### Setup node
+
+Node version should be matched with `package.json` engines field.
+
+ex) Install node using [mise](https://github.com/jdx/mise)
+
 ```sh
-$ mise use node@20
+$ mise use node@{version}
 $ npm install
 ```
 
@@ -18,22 +23,23 @@ wasm build should be updated
 
 ## Run playground locally
 ```sh
-$ npm exec tree-sitter build-wasm
+$ npm exec -- tree-sitter build --wasm
 $ npm exec tree-sitter playground
 ```
 
 ## Build
 ```sh
 $ npm run build
-$ npm exec tree-sitter build-wasm
+$ npm exec -- tree-sitter build --wasm
+
 # update docs assets and versions
 ```
 
-## Publish
+## Publish Bindings
 
 After update release version, change version in `package.json` and `Cargo.toml`. Also update lockfile with `npm i --package-lock-only` and `cargo clean`.
 
-### npm
+### Node (npm)
 - https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages
 
 ```sh
@@ -42,7 +48,7 @@ $ npm publish
 ```
 Check before publish with `--dry-run`
 
-### crates.io
+### Rust (crates.io)
 - https://doc.rust-lang.org/cargo/reference/publishing.html
 
 ```sh
@@ -50,3 +56,7 @@ $ cargo login
 $ cargo publish
 ```
 Check before publish with `--dry-run`
+
+### go
+
+### python

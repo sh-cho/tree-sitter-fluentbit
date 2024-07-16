@@ -6,3 +6,12 @@
 
 # mise conf
 .mise.toml
+
+# Shared objects
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Debug files
+*.dSYM/

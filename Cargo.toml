@@ -1,8 +1,8 @@
 [package]
 name = "tree-sitter-fluentbit"
 description = "fluent-bit grammar for tree-sitter"
-version = "0.1.0-alpha.2"
-keywords = ["incremental", "parsing", "fluentbit"]
+version = "0.1.0-alpha.3"
+keywords = ["incremental", "parsing", "tree-sitter", "fluentbit"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/sh-cho/tree-sitter-fluentbit"
 authors = ["Seonghyeon Cho <seonghyeoncho96@gmail.com>"]
@@ -21,7 +21,7 @@ include = [
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = "~0.22.0"
+tree-sitter = "~0.22.6"
 
 [build-dependencies]
 cc = "1.0"
