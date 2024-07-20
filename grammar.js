@@ -7,13 +7,15 @@
 module.exports = grammar({
   name: 'fluentbit',
 
-  extras: $ => [],
+  extras: $ => [
+    /\r?\n/,
+  ],
 
   rules: {
     config: $ => repeat(
       choice(
         $._config_block,
-        seq(optional($.comment), $._LF),
+        optional($.comment),
       ),
     ),
 
@@ -32,9 +34,8 @@ module.exports = grammar({
 
     section_header: $ => seq(
       '[', field('name', $.section_header_type), ']',
-      $._LF,
     ),
-    section_body: $ => repeat1(
+    section_body: $ => repeat(
       seq(
         $._INDENT,
         choice(
@@ -42,7 +43,6 @@ module.exports = grammar({
           $.comment,
           // $.group,
         ),
-        $._LF,
       ),
     ),
 
@@ -57,7 +57,6 @@ module.exports = grammar({
         $.directive_set,
         $.directive_include,
       ),
-      $._LF
     ),
 
     directive_set: $ => seq('SET', $._WS, $._assign_expr),
@@ -84,7 +83,7 @@ module.exports = grammar({
     key_type: $ => /[a-zA-Z0-9_\.]+/,
     value_type: $ => /[^\n]+/,   // TODO: multiple value
 
-    _LF: $ => '\n',
+    // newline: $ => /\r?\n/,
     _INDENT: $ => '    ',   // 4 spaces
     _WS: $ => / +/,         // only space
 
