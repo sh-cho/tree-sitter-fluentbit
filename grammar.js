@@ -7,15 +7,18 @@
 module.exports = grammar({
   name: 'fluentbit',
 
-  extras: $ => [
-    /\r?\n/,
-  ],
+  extras: $ => [],
 
   rules: {
     config: $ => repeat(
       choice(
         $._config_block,
-        optional($.comment),
+        seq($.comment, $._newline),
+
+        // NOTE: lack of this rule makes several useless ERROR nodes.
+        //       For now, I'm not sure how to avoid that, also ensures section_body
+        //       can capture empty lines correctly.
+        // $.line_only_spaces,
       ),
     ),
 
@@ -34,17 +37,22 @@ module.exports = grammar({
 
     section_header: $ => seq(
       '[', field('name', $.section_header_type), ']',
+      $._newline,
     ),
-    section_body: $ => repeat(
-      seq(
-        $._INDENT,
-        choice(
-          $.entry,
-          $.comment,
-          // $.group,
+    section_body: $ => prec.right(2, repeat1(
+      choice(
+        seq(
+          $._INDENT,
+          choice(
+            $.entry,
+            $.comment,
+            // $.group,
+          ),
+          $._newline,
         ),
+        $._line_only_spaces,
       ),
-    ),
+    )),
 
     // TODO: group
 
@@ -57,6 +65,7 @@ module.exports = grammar({
         $.directive_set,
         $.directive_include,
       ),
+      $._newline,
     ),
 
     directive_set: $ => seq('SET', $._WS, $._assign_expr),
@@ -81,9 +90,10 @@ module.exports = grammar({
     section_header_type: $ => /[a-zA-Z0-9_]+/,
 
     key_type: $ => /[a-zA-Z0-9_\.]+/,
-    value_type: $ => /[^\n]+/,   // TODO: multiple value
+    value_type: $ => /[^\r\n]+/,   // TODO: multiple value
 
-    // newline: $ => /\r?\n/,
+    _newline: $ => /\r?\n/,
+    _line_only_spaces: $ => / *\r?\n/,
     _INDENT: $ => '    ',   // 4 spaces
     _WS: $ => / +/,         // only space
 
