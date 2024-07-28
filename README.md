@@ -15,7 +15,7 @@
 > For simple implementation, the following limitations are applied (for now)
 
 - Only 4 space indentation is supported
-- Empty line at the end of the file is required
+- ERROR node can be placed somewhere, even in the correct file (related [PR](https://github.com/sh-cho/tree-sitter-fluentbit/pull/20))
 
 ## Contributing
 See [CONTRIBUTING.md](./CONTRIBUTING.md)
