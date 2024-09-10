@@ -30,7 +30,7 @@
   "license": "MIT",
   "devDependencies": {
     "node-gyp": "^10.2.0",
-    "tree-sitter-cli": "^0.22.6",
+    "tree-sitter-cli": "^0.23.0",
     "prebuildify": "^6.0.0"
   },
   "files": [
