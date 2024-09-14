@@ -5,6 +5,8 @@
 //!
 //! ```
 //! let code = r#"
+//! [INPUT]
+//!     key value
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
 //! let language = tree_sitter_fluentbit::LANGUAGE;
