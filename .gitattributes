@@ -1,6 +1,13 @@
 * text eol=lf
 *.wasm binary
 
-/src/** linguist-generated
-/bindings/** linguist-generated
-/binding.gyp linguist-detectable=false
+# https://github.com/github-linguist/linguist/blob/master/docs/overrides.md#generated-code
+/src/**         linguist-generated
+/bindings/**    linguist-generated
+/Makefile       linguist-generated
+/go.mod         linguist-generated
+/Package.swift  linguist-generated
+/setup.py       linguist-generated
+/pyproject.toml linguist-generated
+
+/binding.gyp    linguist-detectable=false
