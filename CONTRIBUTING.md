@@ -39,7 +39,7 @@ $ npm exec -- tree-sitter build --wasm
 
 After update release version, change version in `package.json` and `Cargo.toml`. Also update lockfile with `npm i --package-lock-only` and `cargo clean`.
 
-Bindings will be published by [publish workflow](.github/workflows/publish.yml). To publish manually, follow below.
+Bindings will be published by [publish workflow](.github/workflows/publish.yaml). To publish manually, follow below.
 
 ### Node (npm)
 - https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages
