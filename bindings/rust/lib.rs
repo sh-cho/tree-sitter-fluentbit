@@ -4,8 +4,7 @@
 //! tree-sitter [Parser][], and then use the parser to parse some code:
 //!
 //! ```
-//! let code = r#"
-//! [INPUT]
+//! let code = r#"[INPUT]
 //!     key value
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
