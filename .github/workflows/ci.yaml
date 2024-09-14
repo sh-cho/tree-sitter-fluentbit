@@ -31,5 +31,5 @@ jobs:
         # if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - run: npm run build
+      - run: npm run install
       - run: npm run test

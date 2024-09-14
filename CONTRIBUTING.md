@@ -29,7 +29,7 @@ $ npm exec tree-sitter playground
 
 ## Build
 ```sh
-$ npm run build
+$ npm run install
 $ npm exec -- tree-sitter build --wasm
 
 # update docs assets and versions
