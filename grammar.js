@@ -89,7 +89,7 @@ module.exports = grammar({
 
     section_header_type: $ => /[a-zA-Z0-9_]+/,
 
-    key_type: $ => /[a-zA-Z0-9_\.]+/,
+    key_type: $ => /[a-zA-Z0-9_\-\.]+/,
     value_type: $ => /[^\r\n]+/,   // TODO: multiple value
 
     _newline: $ => /\r?\n/,

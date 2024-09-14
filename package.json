@@ -1,14 +1,14 @@
 {
   "name": "tree-sitter-fluentbit",
-  "version": "0.1.0-alpha.4",
+  "version": "0.1.0",
   "description": "fluent-bit grammar for tree-sitter",
   "main": "bindings/node",
   "types": "bindings/node",
   "scripts": {
-    "build": "tree-sitter generate && node-gyp build",
-    "test": "tree-sitter test",
     "install": "node-gyp-build",
-    "prebuildify": "prebuildify --napi --strip"
+    "prestart": "tree-sitter build --wasm",
+    "start": "tree-sitter playground",
+    "test": "node --test bindings/node/*_test.js"
   },
   "keywords": [
     "parser",

@@ -1,7 +1,7 @@
 [package]
 name = "tree-sitter-fluentbit"
 description = "fluent-bit grammar for tree-sitter"
-version = "0.1.0-alpha.4"
+version = "0.1.0"
 keywords = ["incremental", "parsing", "tree-sitter", "fluentbit"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/sh-cho/tree-sitter-fluentbit"
@@ -21,7 +21,7 @@ include = [
 path = "bindings/rust/lib.rs"
 
 [dependencies]
-tree-sitter = "~0.22.6"
+tree-sitter-language = "0.1.0"
 
 [build-dependencies]
 cc = "1.0"
