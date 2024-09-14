@@ -39,6 +39,8 @@ $ npm exec -- tree-sitter build --wasm
 
 After update release version, change version in `package.json` and `Cargo.toml`. Also update lockfile with `npm i --package-lock-only` and `cargo clean`.
 
+Bindings will be published by [publish workflow](.github/workflows/publish.yml). To publish manually, follow below.
+
 ### Node (npm)
 - https://docs.npmjs.com/creating-and-publishing-unscoped-public-packages
 
@@ -57,6 +59,20 @@ $ cargo publish
 ```
 Check before publish with `--dry-run`
 
+### python
+- https://packaging.python.org/en/latest/tutorials/packaging-projects/
+
+```sh
+$ rye sync
+$ rye add twine
+```
+Setup python and install twine (ex. rye)
+
+```sh
+$ rye build --sdist --wheel
+```
+Build python package. Note that this will build wheel only for the current platform.
+
 ### go
 
-### python
+(TBD)
