@@ -29,7 +29,7 @@
   "homepage": "https://github.com/sh-cho/tree-sitter-fluentbit",
   "license": "MIT",
   "devDependencies": {
-    "node-gyp": "^10.2.0",
+    "node-gyp": "^11.0.0",
     "tree-sitter-cli": "^0.24.0",
     "prebuildify": "^6.0.0"
   },
