@@ -18,7 +18,6 @@ directives
 
 ================================================================================
 directives_set with space
-:skip
 ================================================================================
 
 @SET a      = 1
@@ -68,7 +67,6 @@ section
 
 ================================================================================
 comments
-:skip
 ================================================================================
 # comment
 
@@ -84,6 +82,53 @@ comments
       (section_header_type))
     (section_body
       (comment)
+      (entry
+        (key_type)
+        (value_type)))))
+
+
+================================================================================
+blank line between top-level blocks
+================================================================================
+
+@SET a=1
+
+[INPUT]
+    KEY1  VALUE1
+
+@INCLUDE other.conf
+
+--------------------------------------------------------------------------------
+(config
+  (directive
+    (directive_set
+      (key_type)
+      (value_type)))
+  (section
+    (section_header
+      (section_header_type))
+    (section_body
+      (entry
+        (key_type)
+        (value_type))))
+  (directive
+    (directive_include
+      (value_type))))
+
+
+================================================================================
+trailing blank lines after section
+================================================================================
+[INPUT]
+    KEY1  VALUE1
+
+
+--------------------------------------------------------------------------------
+(config
+  (section
+    (section_header
+      (section_header_type))
+    (section_body
       (entry
         (key_type)
         (value_type)))))

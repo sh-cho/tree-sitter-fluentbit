@@ -5,12 +5,14 @@
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "branch",
+      "minimumReleaseAge": "7 days"
     },
     {
       "matchDepTypes": ["devDependencies"],
       "automerge": true,
-      "automergeType": "branch"
+      "automergeType": "branch",
+      "minimumReleaseAge": "7 days"
     }
   ],
   "lockFileMaintenance": {

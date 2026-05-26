@@ -1,4 +1,5 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
   "name": "fluentbit",
   "rules": {
     "config": {
@@ -22,6 +23,10 @@
                 "name": "_newline"
               }
             ]
+          },
+          {
+            "type": "SYMBOL",
+            "name": "_line_only_spaces"
           }
         ]
       }
@@ -315,5 +320,6 @@
   "precedences": [],
   "externals": [],
   "inline": [],
-  "supertypes": []
+  "supertypes": [],
+  "reserved": {}
 }

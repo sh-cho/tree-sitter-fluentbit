@@ -1,43 +1,40 @@
 # CONTRIBUTING
 
-(TBD)
-
 ## Dev
 ### Setup node
 
-Node version should be matched with `package.json` engines field.
+Node version should be matched with `package.json` engines field. This project uses [pnpm](https://pnpm.io/) (see `pnpm-lock.yaml`).
 
-ex) Install node using [mise](https://github.com/jdx/mise)
+ex) Install node and pnpm using [mise](https://github.com/jdx/mise)
 
 ```sh
-$ mise use node@{version}
-$ npm install
+$ mise install
 ```
 
 ### Run docs locally
 ```sh
 $ cd docs/
-$ npx live-server
+$ pnpm dlx live-server
 ```
 wasm build should be updated
 
 ## Run playground locally
 ```sh
-$ npm exec -- tree-sitter build --wasm
-$ npm exec tree-sitter playground
+$ pnpm exec tree-sitter build --wasm
+$ pnpm exec tree-sitter playground
 ```
 
 ## Build
 ```sh
-$ npm run install
-$ npm exec -- tree-sitter build --wasm
+$ pnpm install
+$ pnpm exec tree-sitter build --wasm
 
 # update docs assets and versions
 ```
 
 ## Publish Bindings
 
-After update release version, change version in `package.json` and `Cargo.toml`. Also update lockfile with `npm i --package-lock-only` and `cargo clean`.
+After update release version, change version in `package.json` and `Cargo.toml`. Also update lockfile with `pnpm install --lockfile-only` and `cargo clean`.
 
 Bindings will be published by [publish workflow](.github/workflows/publish.yaml). To publish manually, follow below.
 
@@ -60,6 +57,8 @@ $ cargo publish
 Check before publish with `--dry-run`
 
 ### python
+(TODO: use uv)
+
 - https://packaging.python.org/en/latest/tutorials/packaging-projects/
 
 ```sh

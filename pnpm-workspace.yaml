@@ -1,0 +1,9 @@
+allowBuilds:
+  tree-sitter: true
+  tree-sitter-cli: true
+
+blockExoticSubdeps: true
+
+minimumReleaseAge: 10080
+
+trustPolicy: no-downgrade
