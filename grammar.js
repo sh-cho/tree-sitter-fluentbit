@@ -14,11 +14,7 @@ module.exports = grammar({
       choice(
         $._config_block,
         seq($.comment, $._newline),
-
-        // NOTE: lack of this rule makes several useless ERROR nodes.
-        //       For now, I'm not sure how to avoid that, also ensures section_body
-        //       can capture empty lines correctly.
-        // $.line_only_spaces,
+        $._line_only_spaces,
       ),
     ),
 
