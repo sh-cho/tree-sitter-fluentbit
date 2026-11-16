@@ -35,6 +35,6 @@ jobs:
           test-go: true
           test-swift: ${{runner.os == 'macOS'}}
       - name: Parse examples
-        uses: tree-sitter/parse-action@v4
+        uses: tree-sitter/parse-action@v5
         with:
           files: examples/*
